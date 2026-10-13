@@ -1,0 +1,44 @@
+/* ═══════════════════════════════════════════════════════════════
+   SAARTE — MEN'S STORE — Minimal CSS (non-Tailwind-expressible styles only)
+   ═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── Hero gradient (complex radial + linear) ────────────────── */
+.men-hero {
+  background: linear-gradient(135deg, #080c10 0%, #0f1a26 40%, #1a120a 100%);
+}
+
+.men-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 55% at 15% 50%, rgba(80, 130, 180, 0.14) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 60% at 85% 40%, rgba(160, 110, 50, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.men-hero-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* ── Hero title fluid font size ─────────────────────────────── */
+.men-hero-title {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+}
+
+/* ── Loading spinner animation ──────────────────────────────── */
+.men-spinner {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(15, 26, 38, 0.1);
+  border-top-color: #0f1a26;
+  border-radius: 50%;
+  animation: men-spin 0.8s linear infinite;
+}
+
+@keyframes men-spin {
+  to { transform: rotate(360deg); }
+}

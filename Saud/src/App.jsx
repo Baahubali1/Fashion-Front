@@ -39,10 +39,12 @@ const App = () => {
 
         setWomenProducts(
           products.filter((product) => product.category === 'Women')
+          .slice(0, 4)
         );
 
         setMenProducts(
           products.filter((product) => product.category === 'Men')
+          .slice(0, 4)
         );
 
         setHomeMakeup(
